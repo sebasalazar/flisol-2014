@@ -5,7 +5,7 @@
  *
  * @author Sebastián Salazar Molina <sebasalazar@gmail.com>
  */
-class Acceso extends \Eloquent {
+class Articulo extends \Eloquent {
 
     protected $table = "articulos";
     protected $guarded = array('fecha');
