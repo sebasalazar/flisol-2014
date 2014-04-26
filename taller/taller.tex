@@ -9,6 +9,7 @@
 \usepackage{verbatim}
 \usepackage{multicol}
 
+
 \pdfinfo
 {
   /Title       (Taller de Desarrollo Web)
@@ -273,13 +274,197 @@ Los temas que se trataremos son:
 \end{frame}
 
 
+\subsection{jQuery}
+
+\begin{frame}
+ \frametitle{jQuery}
+ jQuery es una biblioteca de JavaScript, creada inicialmente por John Resig, que permite simplificar la manera de interactuar con los documentos HTML, manipular el árbol DOM, manejar eventos, desarrollar animaciones y agregar interacción con la técnica AJAX a páginas web.
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{jQuery}
+ Lo que ha hecho de jQuery, tan popular, es la facilidad y belleza que provee para crear funciones y extender las características de JavaScript.
+\end{frame}
+
+
 \section{PHP}
+
+\subsection{PHP}
+
+\begin{frame}
+ \frametitle{PHP}
+ PHP es un lenguaje de programación de uso general de código del lado del servidor originalmente diseñado para el desarrollo web de contenido dinámico. Fue uno de los primeros lenguajes de programación del lado del servidor que se podían incorporar directamente en el documento HTML en lugar de llamar a un archivo externo que procese los datos. El código es interpretado por un servidor web con un módulo de procesador de PHP que genera la página Web resultante. PHP ha evolucionado por lo que ahora incluye también una interfaz de línea de comandos que puede ser usada en aplicaciones gráficas independientes.
+\end{frame}
+
+\begin{frame}
+ \frametitle{PHP}
+ PHP es un lenguaje interpretado y débilmente tipado. Es muy flexible, puede ser tanto procedural como orientado a objetos. La mayoría de los frameworks usan las características orientadas a objetos.
+\end{frame}
+
+\begin{frame}
+ \frametitle{Objeto}
+ En el paradigma de programación orientada a objetos (POO, o bien OOP en inglés), un objeto es una unidad dentro de un programa que consta de un estado y de un comportamiento, que a su vez constan respectivamente de datos almacenados y de tareas realizables durante el tiempo de ejecución. Un objeto puede ser creado instanciando una clase, como ocurre en la programación orientada a objetos, o mediante escritura directa de código y la replicación otros objetos, como ocurre en la programación basada en prototipos.
+\end{frame}
 
 \section{SQL / PostgreSQL}
 
+\subsection{SQL}
+
+\begin{frame}
+ \frametitle{SQL}
+ El lenguaje de consulta estructurado o SQL (Structured Query Language) es un lenguaje declarativo de acceso a bases de datos relacionales que permite especificar diversos tipos de operaciones en ellas. Una de sus características es el manejo del álgebra y el cálculo relacional que permiten efectuar consultas con el fin de recuperar de forma sencilla información de interés de bases de datos, así como hacer cambios en ellas.
+\end{frame}
+
+\subsection{PostgreSQL}
+
+\begin{frame}
+ \frametitle{PostgreSQL}
+ PostgreSQL es un sistema de gestión de bases de datos, que permiten el almacenamiento, modificación y extracción de la información en una base de datos, además de proporcionar herramientas para añadir, borrar, modificar y analizar los datos. Tiene licencia BSD y es uno de los sistemas más robustos y confiables del mercado.
+\end{frame}
+
+
 \section{Laravel}
 
+\subsection{Laravel}
+
+\begin{frame}
+ \frametitle{Laravel}
+ Laravel tiene como objetivo ser un framework que permita el uso de una sintaxis elegante y expresiva para crear código de forma sencilla y permitiendo multitud de funcionalidades. Intenta aprovechar lo mejor de otros frameworks (principalmente Symfony) y aprovechar las características de las últimas versiones de PHP.
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Laravel}
+ \begin{itemize}
+  \item Sistema de ruteo, también RESTful
+  \item Blade, Motor de plantillas
+  \item Eloquent ORM
+  \item Basado en Composer
+  \item Soporte para el caché
+  \item Soporte para MVC
+ \end{itemize}
+\end{frame}
+
+\subsection{Instalación del Proyecto}
+
+\begin{frame}
+ \frametitle{Instalación}
+ Los requisitos de instalación:
+ \begin{itemize}
+  \item PHP (igual o superior a 5.3.7)
+  \item Compilación de PHP con soporte a mcrypt, openssl, y al menos el motor de base de datos a utilizar (en nuestro caso PostgreSQL).
+  \item Composer
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Instalación}
+ El primer paso es instalar Composer:
+ \newline
+ {\bf curl -sS https://getcomposer.org/installer \textbar  php}
+ \newline
+ {\bf sudo mv composer.phar /usr/local/bin/composer}
+ \newline
+ Con esto deberíamos disponer del comando composer dentro de nuestro path
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Instalación}
+ En un terminal, ubicarse en una carpeta adecuada y ejecutar:
+ \newline
+ {\bf composer create-project laravel/laravel proyecto-laravel --prefer-dist}
+ \newline
+ Con dicho comando deberíamos crear un proyecto, de nombre ``proyecto-laravel''.
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Estructura del proyecto}
+ \begin{itemize}
+  \item<2-> \alert{/app} Contiene los controladores, modelos, vistas y configuraciones de la aplicación. En esta carpeta escribiremos la mayoría del código para que nuestra aplicación funcione.
+  \item<3-> \alert{/public} Es la única carpeta a la que los usuarios de la aplicación pueden acceder. Todo las peticiones y solicitudes a la aplicación pasan por esta carpeta, ya que en ella se encuentra el index.php, este archivo es el que inicia todo el proceso de ejecución del framework. En este directorio también se alojan los archivos CSS, Javascript, imágenes y otros archivos que se quieran hacer públicos.
+  \item<4-> \alert{/vendor} En esta carpeta se alojan todas las librerías que conforman el framework y sus dependencias.
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Estructura del proyecto}
+ \begin{itemize}
+  \item<2-> \alert{/lang} En esta carpeta se guardan archivos PHP que contienen Arrays con los textos de diferentes lenguajes, en caso que se desee que la aplicación se pueda traducir.
+  \item<3-> \alert{/app/config} Aquí se pueden se pueden encontrar todos los archivos de configuración de la aplicación. Base datos, cache, correos, sesiones o cualquier otra configuración general de la aplicación.
+  \item<4-> \alert{/app/controller} Contiene todos los archivos con las clases de los controladores que sirven para interactuar con los modelos, las vistas y manejar la lógica de la aplicación.
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Estructura del proyecto}
+ \begin{itemize}
+  \item<2-> \alert{/app/model} Los modelos son clases que representan la información (datos) de la aplicación y las reglas para manipularlos. En la mayoría de los casos cada tabla de la base datos esta representada con un modelo. La lógica de negocio de la aplicación esta contendía en los modelos.
+  \item<3-> \alert{/app/views} Este directorio contiene las plantillas de HTML que usan los controladores para mostrar la información. Hay que tener en cuenta que en esta carpeta no van los Javascript, CSS o imágenes, ese tipo de archivos van alojados en la carpeta /public.
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Configuración de la Base de datos}
+ Dentro de la carpeta de instalación se debe configurar el archivo /app/config/database.php
+ \begin{center}
+    \includegraphics[scale=0.35]{img/databasephp.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Configuración}
+ También hay que configurar:
+ \begin{itemize}
+  \item /app/config/app.php
+  \item /app/config/mail.php
+  \item /app/config/session.php
+ \end{itemize}
+\end{frame}
+
+\subsection{Modelando el Proyecto}
+
+\begin{frame}
+ \frametitle{Modelo}
+ Existe básicamente dos opciones para crear el modelo del proyecto:
+ \begin{itemize}
+  \item Usar ``migraciones'' (crear clases que se transformarán en tablas).
+  \item Modelar desde la Base de datos. (Crear las tablas primero, y en base a estas desarrollar el modelo).
+ \end{itemize}
+ En mi opinión, es mejor desarrollar un buen modelo de base de datos, y crear el modelo a partir del modelo.
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Modelo}
+ Para este taller crearemos un pequeño modelo con 3 tablas.
+ \begin{center}
+    \includegraphics[scale=0.45]{img/modelo.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Modelo}
+ El siguiente paso, es llevar este modelo de base de datos, a un modelo de objetos PHP que podamos usar con laravel.
+ \begin{center}
+    \includegraphics[scale=0.3]{img/modelo_poo.png}
+ \end{center}
+\end{frame}
+
+
 \section{TODO}
+
+\begin{frame}
+ \frametitle{TODO}
+ Mejorar el diseño Gráfico, agregar un sistemas de comentarios, aumentar la funcionalidad.
+\end{frame}
+
 
 \frame{
   \vspace{2cm}
@@ -289,7 +474,7 @@ Los temas que se trataremos son:
   \begin{flushright}
     Sebastián Salazar Molina
 
-    \structure{\footnotesize{sebasalazar@gmail.com}}
+    \structure{\footnotesize{@sebastian\_sm}}
   \end{flushright}
 }
 
