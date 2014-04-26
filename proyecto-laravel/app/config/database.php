@@ -65,7 +65,7 @@ return array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
-			'host'     => '192.168.3.5',
+			'host'     => 'sebastian.cl',
 			'database' => 'laraveldb',
 			'username' => 'laravel',
 			'password' => 'laravel',
