@@ -1,0 +1,130 @@
+\documentclass[12pt]{beamer}
+
+\usetheme{Oxygen}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+% \usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{multicol}
+
+
+\pdfinfo
+{
+  /Title       (Desarrollo Web)
+  /Creator     (TeX)
+  /Author      (Sebastián Salazar Molina)
+}
+
+
+\title{Desarrollo Web}
+\subtitle{Mobile First}
+\author{Sebastián Salazar Molina.}
+\institute[INF - UTEM] { Unidad de Informática - Universidad Tecnológica Metropolitana }
+\date{27 de Abril de 2014}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section*{}
+\begin{frame}
+  \frametitle{Contenidos}
+  \begin{multicols}{2}
+    \tableofcontents[section=1,hidesubsections]
+  \end{multicols}
+\end{frame}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Contenidos}
+    \begin{multicols}{2}
+    \tableofcontents[currentsection,hideallsubsections]
+    \end{multicols}
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Contenidos}
+%     \begin{multicols}{2}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+%     \end{multicols}
+  }
+}
+
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Introducción
+\section{Introducción}
+\subsection{Introducción}
+
+\begin{frame}
+\frametitle{Acerca de mí.}
+\begin{itemize}
+ \item<2-> Sebastián Alexis Salazar Molina (@sebastian\_sm) .
+ \item<3-> Ingeniero Civil en Computación (UTEM).
+ \item<4-> Consultor TI en \href{http://www.experti.cl}{ExperTI} (C/C++ , PHP, Java)
+ \item<5-> \href{http://sebastian.cl}{http://sebastian.cl}
+\end{itemize}
+\end{frame}
+
+
+\section{Consejos}
+
+\begin{frame}
+ \frametitle{Adaptabilidad}
+ La web es cada vez más compleja, y cada vez hay que cubrir una mayor cantidad de dispositivos resoluciones y características. 
+ \newline
+ Ante este desafío, el ``responsive web design'' nos entrega una herramienta flexible que nos permitirá adaptarnos ante las distintas circunstancias.
+\end{frame}
+
+
+\begin{frame}
+ \frametitle{Contenido}
+ El Usuario móvil, necesita el contenido ``{\bf esencial}'', bien distribuido, ordenado y fácil de navegar.
+\end{frame}
+
+\begin{frame}
+ \frametitle{HTML5}
+ Muchos navegadores móviles, sacan el máximo de partido de html5, por esta razón, tener una estructura ordenado, tener una semántica pulida y utilizar correctamente las etiquetas (usar los input html5), simplificará la tarea de adopción.
+\end{frame}
+
+\begin{frame}
+ \frametitle{Viewport}
+ 
+\end{frame}
+
+
+
+
+\frame{
+  \vspace{2cm}
+  {\huge ¿ Preguntas ?}
+
+  \vspace{3cm}
+  \begin{flushright}
+    Sebastián Salazar Molina
+
+    \structure{\footnotesize{@sebastian\_sm}}
+  \end{flushright}
+}
+
+\end{document}
