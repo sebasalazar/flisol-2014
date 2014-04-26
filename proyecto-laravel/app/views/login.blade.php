@@ -1,6 +1,9 @@
 @extends('layouts.main')
 
 @section('contenido')
+
+{{ HTML::link('login', 'Login') }} // {{ HTML::link('contacto', 'Contacto') }}
+
 <h1>Formulario de Login</h1>
 <p>Para ingresar por favor utilice sus credenciales.</p>
 

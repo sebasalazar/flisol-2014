@@ -18,7 +18,7 @@ class Usuario extends Eloquent implements UserInterface, RemindableInterface {
      * @var array
      */
     protected $hidden = array('password');
-    public $primaryKey = 'pk';
+    public $primaryKey = 'email';
     public $timestamps = false;
 
     /**
@@ -27,7 +27,8 @@ class Usuario extends Eloquent implements UserInterface, RemindableInterface {
      * @return mixed
      */
     public function getAuthIdentifier() {
-        return $this->getKey();
+        //return $this->getKey();
+        return $this->email;
     }
 
     /**

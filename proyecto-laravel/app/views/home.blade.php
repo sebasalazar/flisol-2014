@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-{{ HTML::link('login', 'Login') }}
+{{ HTML::link('login', 'Login') }} // {{ HTML::link('contacto', 'Contacto') }}
 
 <?php echo HTML::script('js/colorbox/jquery.colorbox-min.js'); ?>
 
@@ -22,7 +22,10 @@
     @foreach ($articulos as $fila)
     <div id="inline_content{{ $fila->pk }}" style='padding:10px; background:#fff;'>
         <h3>{{ $fila->titulo }}</h3>
-        <p>Por {{ $fila->autor }} el {{ $fila->fecha }}</p>
+        <p>
+            <span style="font-size: 8pt;">Por {{ $fila->autor }}</span>
+            <span style="font-size: 7pt;">el {{ $fila->fecha }}</span>
+        </p>
         <p>
             {{ $fila->articulo }}
         </p>

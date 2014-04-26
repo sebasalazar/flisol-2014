@@ -2,54 +2,38 @@
 
 @section('contenido')
 
-{{ HTML::link('login', 'Login') }}
+{{ HTML::link('login', 'Login') }} // {{ HTML::link('contacto', 'Contacto') }}
 
 
-<h1>Bienvenido</h1>
-<p>Se ha autenticado exitosamente.</p>
+<h1>Página de Contacto</h1>
 
-@if (count($data) > 0)
-<h2>Ingresos Totales</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Cantidad de Accesos</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($grupo as $fila)
-        <tr>
-            <td>{{ $fila->nombre }}</td>
-            <td>{{ $fila->total }}</td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+{{ Form::open(array('url' => 'contacto')) }}
+
+<p>{{ Form::label('nombre', 'Nombre') }}</p>
+<p>{{ Form::text('nombre') }}</p>
+
+<p>{{ Form::label('email', 'Email') }}</p>
+<p>{{ Form::text('email') }}</p>
+
+<p>{{ Form::label('asunto', 'Asunto') }}</p>
+<p>{{ Form::text('asunto') }}</p>
+
+<p>{{ Form::label('mensaje', 'Mensaje') }}</p>
+<p>{{ Form::textarea('mensaje') }}</p>
+
+<p>{{ Form::submit('Enviar') }}</p>
+
+{{ Form::close() }}
+
+@if (Session::has('exito'))
+    <p>Su mensaje fue enviado exitosamente</p>
 @endif
 
-@if (count($data) > 0)
-<h2>Últimos Ingresos</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Rut</th>
-            <th>Fecha</th>
-            <th>IP</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($data as $fila)
-        <tr>
-            <td>{{ $fila->nombre }}</td>
-            <td>{{ $fila->usuario->email }}</td>
-            <td>{{ $fila->fecha }}</td>
-            <td>{{ $fila->ip }}</td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+@if($errors->has())
+    @foreach ($errors->all() as $error)
+        <div>{{ $error }}</div>
+    @endforeach
 @endif
+
 
 @stop

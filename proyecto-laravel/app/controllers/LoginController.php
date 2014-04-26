@@ -9,7 +9,7 @@ class LoginController extends BaseController {
 
     public function showLogin() {
         if (Auth::check()) {
-            return Redirect::to('home')->with('exito', 'Ya está logueado');
+            return Redirect::to('crearArticulo')->with('exito', 'Ya está logueado');
         }
 
         return View::make('login');
@@ -19,7 +19,6 @@ class LoginController extends BaseController {
         // Get all the inputs
         // id is used for login, username is used for validation to return correct error-strings
         $userdata = array(
-            'id' => Input::get('email'),
             'email' => Input::get('email'),
             'password' => Input::get('password')
         );
@@ -38,7 +37,7 @@ class LoginController extends BaseController {
             // Try to log the user in.
             if (Auth::attempt($userdata)) {
                 // Redirect to homepage
-                return Redirect::to('home')->with('exito', 'Logueado exitosamente');
+                return Redirect::to('crearArticulo')->with('exito', 'Logueado exitosamente');
             } else {
                 // Redirect to the login page.
                 return Redirect::to('login')->with('login_errors', true)->withErrors(array('password' => 'Password inválida'))->withInput(Input::except('password'));
@@ -54,7 +53,7 @@ class LoginController extends BaseController {
         Auth::logout();
 
         // Redirect to homepage
-        return Redirect::to('login')->with('exito', 'Se ha deslogueado exitosamente');
+        return Redirect::to('home')->with('exito', 'Se ha deslogueado exitosamente');
     }
 
 }

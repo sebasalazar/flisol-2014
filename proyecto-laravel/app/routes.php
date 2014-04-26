@@ -18,6 +18,12 @@
 
 Route::get('/', 'HomeController@showWelcome');
 
+Route::get('home', 'HomeController@showWelcome');
+
+Route::get('contacto', 'ContactoController@mostrar');
+
+Route::post('contacto', 'ContactoController@enviar');
+
 Route::get('login', 'LoginController@showLogin');
 
 Route::post('login', 'LoginController@postLogin');
@@ -25,7 +31,6 @@ Route::post('login', 'LoginController@postLogin');
 Route::get('logout', 'LoginController@getLogout');
 
 Route::group(array('before' => 'auth'), function() {
-    Route::get('home', 'HomeController@showWelcome');
-
-    Route::post('home', 'HomeController@showWelcome');
+    Route::get('crearArticulo', 'ArticuloController@mostrar');
+    Route::post('crearArticulo', 'ArticuloController@crear');
 });

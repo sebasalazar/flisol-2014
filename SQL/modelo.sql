@@ -5,7 +5,7 @@ CREATE TABLE usuarios (
     pk serial NOT NULL,
     email varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
-    remember_token varchar(255) NOT NULL,
+    remember_token varchar(255),
     UNIQUE (email),
     PRIMARY KEY (pk)
 );
